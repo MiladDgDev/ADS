@@ -29,7 +29,7 @@ body {
   grid-row: 1;
   width: fit-content;
   padding: 1rem 2rem;
-  background-color: none;
+  background-color: transparent;
   border: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
