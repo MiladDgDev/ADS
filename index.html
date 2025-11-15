@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script async src="script.js" type="module"></script>
+    <title>Tabordion</title>
+  </head>
+  <body>
+    <main class="container" role="tablist" aria-label="Navigation tabs">
+      <button
+        id="btn-artists-panel"
+        class="btn-panel"
+        role="tab"
+        aria-selected="true"
+        aria-controls="artists-panel"
+        tabindex="0"
+      >
+        Artists
+      </button>
+      <!-- Artists -->
+      <ul
+        id="artists-panel"
+        class="panel"
+        role="tabpanel"
+        aria-labelledby="btn-artists-panel"
+      >
+        <!-- Artist Card No. 1 -->
+        <li id="artist-card-1" class="artist-card">
+          <div class="artist-info">
+            <h3>Albus Guitaristus</h3>
+
+            <h4>Biography</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              quam impedit facere culpa nulla eligendi iure exercitationem vel
+              voluptatum vitae tenetur ullam cumque beatae, doloribus architecto
+              asperiores minima quidem quis?
+            </p>
+          </div>
+          <img
+            src="pics/albus-guitaristus.jpg"
+            alt="Guitarist Albus Guitaristus"
+            class="artist-image"
+          />
+        </li>
+        <!-- Artist Card No. 2 -->
+        <li id="artist-card-2" class="artist-card">
+          <div class="artist-info">
+            <h3>Violetta Violinista</h3>
+
+            <h4>Biography</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              quam impedit facere culpa nulla eligendi iure exercitationem vel
+              voluptatum vitae tenetur ullam cumque beatae, doloribus architecto
+              asperiores minima quidem quis?
+            </p>
+          </div>
+          <img
+            src="pics/violetta-violinista.jpg"
+            alt="Violinist Violetta Violinista"
+            class="artist-image"
+          />
+        </li>
+        <!-- Artist Card No. 3 -->
+        <li id="artist-card-3" class="artist-card">
+          <div class="artist-info">
+            <h3>Supreme Sopranista</h3>
+
+            <h4>Biography</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              quam impedit facere culpa nulla eligendi iure exercitationem vel
+              voluptatum vitae tenetur ullam cumque beatae, doloribus architecto
+              asperiores minima quidem quis?
+            </p>
+          </div>
+          <img
+            src="pics/supreme-sopranista.jpg"
+            alt="Soprano Supreme Sopranista"
+            class="artist-image"
+          />
+        </li>
+      </ul>
+      <button
+        id="btn-concerts-panel"
+        class="btn-panel"
+        role="tab"
+        aria-selected="false"
+        aria-controls="concerts-panel"
+        tabindex="0"
+      >
+        Concert List
+      </button>
+      <!-- Concert List -->
+      <ul
+        id="concerts-panel"
+        class="panel"
+        role="tabpanel"
+        aria-labelledby="btn-concerts-panel"
+        aria-hidden="true"
+      >
+        <li class="concert-item">
+          <h3>Marvelosa Guitara</h3>
+          <p>Date: 2050-07-15</p>
+          <p>Time: 19:30 MST</p>
+          <p>Location: Moon Symphony Hall</p>
+          <button
+            class="concert-ticket-buy-btn"
+            aria-label="Buy tickets for Marvelosa Guitara"
+          >
+            &#x1F6D2; Buy Tickets
+          </button>
+        </li>
+        <li class="concert-item">
+          <h3>Aching Strings</h3>
+          <p>Date: 2050-09-10</p>
+          <p>Time: 18:00 VST</p>
+          <p>Location: Venus Opera House</p>
+          <button
+            class="concert-ticket-buy-btn"
+            aria-label="Buy tickets for Aching Strings"
+          >
+            &#x1F6D2; Buy Tickets
+          </button>
+        </li>
+        <li class="concert-item">
+          <h3>Glass Shattering Songs</h3>
+          <p>Date: 2050-10-05</p>
+          <p>Time: 21:00 MST</p>
+          <p>Location: Mars Theater Club</p>
+          <button
+            class="concert-ticket-buy-btn"
+            aria-label="Buy tickets for Glass Shattering Songs"
+          >
+            &#x1F6D2; Buy Tickets
+          </button>
+        </li>
+        <li class="concert-item">
+          <h3>Classical Chills</h3>
+          <p>Date: 2050-11-12</p>
+          <p>Time: 19:00 JST</p>
+          <p>Location: Jupiter Philharmonic</p>
+          <button
+            class="concert-ticket-buy-btn"
+            aria-label="Buy tickets for Classical Chills"
+          >
+            &#x1F6D2; Buy Tickets
+          </button>
+        </li>
+      </ul>
+      <button
+        id="btn-repertoire-panel"
+        class="btn-panel"
+        role="tab"
+        aria-selected="false"
+        aria-controls="repertoire-panel"
+        tabindex="0"
+      >
+        Repertoire
+      </button>
+      <!-- Repertoire -->
+      <ul
+        id="repertoire-panel"
+        class="panel"
+        role="tabpanel"
+        aria-labelledby="btn-repertoire-panel"
+        aria-hidden="true"
+      >
+        <li class="work">
+          <h3 class="composer">
+            Wolfgang Amadeus Mozart
+
+            <span class="composer-birth-death-dt">(1756–1791)</span>
+          </h3>
+          <h4 class="composition-title">Symphony No. 40 in G minor</h4>
+        </li>
+        <li class="work">
+          <h3 class="composer">
+            Ludwig van Beethoven
+            <span class="composer-birth-death-dt">(1770–1827)</span>
+          </h3>
+          <h4 class="composition-title">Symphony No. 9 in D minor</h4>
+        </li>
+        <li class="work">
+          <h3 class="composer">
+            Johann Sebastian Bach
+            <span class="composer-birth-death-dt">(1685–1750)</span>
+          </h3>
+          <h4 class="composition-title">Brandenburg Concerto No. 3</h4>
+        </li>
+        <li class="work">
+          <h3 class="composer">
+            Antonio Vivaldi
+            <span class="composer-birth-death-dt">(1678–1741)</span>
+          </h3>
+          <h4 class="composition-title">The Four Seasons</h4>
+        </li>
+        <li class="work">
+          <h3 class="composer">
+            Franz Schubert
+            <span class="composer-birth-death-dt">(1797–1828)</span>
+          </h3>
+          <h4 class="composition-title">
+            Symphony No. 8 in C major (Unfinished)
+          </h4>
+        </li>
+        <li class="work">
+          <h3 class="composer">
+            Johannes Brahms
+            <span class="composer-birth-death-dt">(1833–1897)</span>
+          </h3>
+          <h4 class="composition-title">Symphony No. 1 in C minor</h4>
+        </li>
+      </ul>
+      <button id="btn-remove-panels" class="btn-panel">&#x2715;</button>
+    </main>
+  </body>
+</html>
