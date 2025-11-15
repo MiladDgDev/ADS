@@ -4,16 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script async src="script.js" type="module"></script>
     <title>Tabordion</title>
   </head>
   <body>
-    <div class="container" role="tablist" aria-label="Navigation tabs">
+    <main class="container" role="tablist" aria-label="Navigation tabs">
       <button
-        id="btn-panel1"
+        id="btn-artists-panel"
         class="btn-panel"
         role="tab"
         aria-selected="true"
-        aria-controls="panel1"
+        aria-controls="artists-panel"
         tabindex="0"
       >
         Artists
@@ -84,11 +85,11 @@
         </li>
       </ul>
       <button
-        id="btn-panel2"
+        id="btn-concerts-panel"
         class="btn-panel"
         role="tab"
         aria-selected="false"
-        aria-controls="panel2"
+        aria-controls="concerts-panel"
         tabindex="0"
       >
         Concert List
@@ -106,36 +107,56 @@
           <p>Date: 2050-07-15</p>
           <p>Time: 19:30 MST</p>
           <p>Location: Moon Symphony Hall</p>
-          <button class="concert-ticket-buy-btn">&#x1F6D2; Buy Tickets</button>
+          <button
+            class="concert-ticket-buy-btn"
+            aria-label="Buy tickets for Marvelosa Guitara"
+          >
+            &#x1F6D2; Buy Tickets
+          </button>
         </li>
         <li class="concert-item">
           <h3>Aching Strings</h3>
           <p>Date: 2050-09-10</p>
           <p>Time: 18:00 VST</p>
           <p>Location: Venus Opera House</p>
-          <button class="concert-ticket-buy-btn">&#x1F6D2; Buy Tickets</button>
+          <button
+            class="concert-ticket-buy-btn"
+            aria-label="Buy tickets for Aching Strings"
+          >
+            &#x1F6D2; Buy Tickets
+          </button>
         </li>
         <li class="concert-item">
           <h3>Glass Shattering Songs</h3>
           <p>Date: 2050-10-05</p>
           <p>Time: 21:00 MST</p>
           <p>Location: Mars Theater Club</p>
-          <button class="concert-ticket-buy-btn">&#x1F6D2; Buy Tickets</button>
+          <button
+            class="concert-ticket-buy-btn"
+            aria-label="Buy tickets for Glass Shattering Songs"
+          >
+            &#x1F6D2; Buy Tickets
+          </button>
         </li>
         <li class="concert-item">
           <h3>Classical Chills</h3>
           <p>Date: 2050-11-12</p>
           <p>Time: 19:00 JST</p>
           <p>Location: Jupiter Philharmonic</p>
-          <button class="concert-ticket-buy-btn">&#x1F6D2; Buy Tickets</button>
+          <button
+            class="concert-ticket-buy-btn"
+            aria-label="Buy tickets for Classical Chills"
+          >
+            &#x1F6D2; Buy Tickets
+          </button>
         </li>
       </ul>
       <button
-        id="btn-panel3"
+        id="btn-repertoire-panel"
         class="btn-panel"
         role="tab"
         aria-selected="false"
-        aria-controls="panel3"
+        aria-controls="repertoire-panel"
         tabindex="0"
       >
         Repertoire
@@ -194,6 +215,7 @@
           <h4 class="composition-title">Symphony No. 1 in C minor</h4>
         </li>
       </ul>
-    </div>
+      <button id="btn-remove-panels" class="btn-panel">&#x2715;</button>
+    </main>
   </body>
 </html>

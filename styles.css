@@ -1,3 +1,5 @@
+/* general settings */
+
 html {
   font-size: 62.5%;
 }
@@ -49,6 +51,7 @@ body {
     auto;
   grid-template-rows: auto auto;
 }
+
 .btn-panel {
   grid-row: 1;
   width: fit-content;
@@ -64,8 +67,35 @@ body {
   grid-column: 1/-1;
   width: 100%;
   padding-top: 1rem;
-  display: grid;
+  display: none;
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transition: all 0.3s ease-in-out;
 }
+
+.active-btn {
+  background-color: #222;
+  color: #fff;
+}
+
+.active-panel {
+  display: grid;
+  z-index: 100;
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+#btn-remove-panels {
+  padding: 0.5rem 1rem;
+  font-size: 2rem;
+}
+
+/* artists panel */
 
 #artists-panel {
   grid-template-columns: 1fr 1fr;
@@ -93,16 +123,7 @@ body {
   justify-self: end;
 }
 
-.active-btn {
-  background-color: #222;
-  color: #fff;
-}
-
-.active-panel {
-  display: grid;
-}
-
-/* Concert Item */
+/* Concert panel */
 
 #concerts-panel {
   list-style: none;
@@ -130,7 +151,7 @@ body {
   cursor: pointer;
 }
 
-/* Repertoire */
+/* Repertoire panel */
 
 #repertoire-panel {
   list-style: none;
@@ -145,10 +166,6 @@ body {
 
 .composition-title {
   font-style: italic;
-}
-
-.hidden {
-  display: none;
 }
 
 /* style for under 800px */
@@ -197,6 +214,10 @@ body {
 
   .concert-item {
     text-align: center;
+  }
+
+  #btn-remove-panels {
+    display: none;
   }
 }
 
