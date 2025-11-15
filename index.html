@@ -18,26 +18,6 @@
       >
         Artists
       </button>
-      <button
-        id="btn-panel2"
-        class="btn-panel"
-        role="tab"
-        aria-selected="false"
-        aria-controls="panel2"
-        tabindex="0"
-      >
-        Concert List
-      </button>
-      <button
-        id="btn-panel3"
-        class="btn-panel"
-        role="tab"
-        aria-selected="false"
-        aria-controls="panel3"
-        tabindex="0"
-      >
-        Repertoire
-      </button>
       <!-- Artists -->
       <ul
         id="artists-panel"
@@ -103,26 +83,117 @@
           />
         </li>
       </ul>
+      <button
+        id="btn-panel2"
+        class="btn-panel"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel2"
+        tabindex="0"
+      >
+        Concert List
+      </button>
       <!-- Concert List -->
-      <section
+      <ul
         id="concerts-panel"
         class="panel"
         role="tabpanel"
         aria-labelledby="btn-panel2"
         aria-hidden="true"
       >
-        <div class="concert-list"></div>
-      </section>
+        <li class="concert-item">
+          <h3>Marvelosa Guitara</h3>
+          <p>Date: 2050-07-15</p>
+          <p>Time: 19:30 MST</p>
+          <p>Location: Moon Station Symphony Hall</p>
+          <button class="concert-ticket-buy-btn">&#x1F6D2; Buy Tickets</button>
+        </li>
+        <li class="concert-item">
+          <h3>Aching Strings</h3>
+          <p>Date: 2050-09-10</p>
+          <p>Time: 18:00 VST</p>
+          <p>Location: Venus Opera House</p>
+          <button class="concert-ticket-buy-btn">&#x1F6D2; Buy Tickets</button>
+        </li>
+        <li class="concert-item">
+          <h3>Glass Shattering Songs</h3>
+          <p>Date: 2050-10-05</p>
+          <p>Time: 21:00 MST</p>
+          <p>Location: Mars Jazz Club</p>
+          <button class="concert-ticket-buy-btn">&#x1F6D2; Buy Tickets</button>
+        </li>
+        <li class="concert-item">
+          <h3>Classical Chills</h3>
+          <p>Date: 2050-11-12</p>
+          <p>Time: 19:00 JST</p>
+          <p>Location: Jupiter Philharmonic</p>
+          <button class="concert-ticket-buy-btn">&#x1F6D2; Buy Tickets</button>
+        </li>
+      </ul>
+      <button
+        id="btn-panel3"
+        class="btn-panel"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel3"
+        tabindex="0"
+      >
+        Repertoire
+      </button>
       <!-- Repertoire -->
-      <section
-        id="panel3"
+      <ul
+        id="repertoire-panel"
         class="panel"
         role="tabpanel"
         aria-labelledby="btn-panel3"
         aria-hidden="true"
       >
-        the pieces
-      </section>
+        <li class="work">
+          <h2 class="composer">
+            Wolfgang Amadeus Mozart
+
+            <span class="composer-birth-death-dt">(1756–1791)</span>
+          </h2>
+          <h3 class="composition-title">Symphony No. 40 in G minor</h3>
+        </li>
+        <li class="work">
+          <h2 class="composer">
+            Ludwig van Beethoven
+            <span class="composer-birth-death-dt">(1770–1827)</span>
+          </h2>
+          <h3 class="composition-title">Symphony No. 9 in D minor</h3>
+        </li>
+        <li class="work">
+          <h2 class="composer">
+            Johann Sebastian Bach
+            <span class="composer-birth-death-dt">(1685–1750)</span>
+          </h2>
+          <h3 class="composition-title">Brandenburg Concerto No. 3</h3>
+        </li>
+        <li class="work">
+          <h2 class="composer">
+            Antonio Vivaldi
+            <span class="composer-birth-death-dt">(1678–1741)</span>
+          </h2>
+          <h3 class="composition-title">The Four Seasons</h3>
+        </li>
+        <li class="work">
+          <h2 class="composer">
+            Franz Schubert
+            <span class="composer-birth-death-dt">(1797–1828)</span>
+          </h2>
+          <h3 class="composition-title">
+            Symphony No. 8 in C major (Unfinished)
+          </h3>
+        </li>
+        <li class="work">
+          <h2 class="composer">
+            Johannes Brahms
+            <span class="composer-birth-death-dt">(1833–1897)</span>
+          </h2>
+          <h3 class="composition-title">Symphony No. 1 in C minor</h3>
+        </li>
+      </ul>
     </div>
   </body>
 </html>
