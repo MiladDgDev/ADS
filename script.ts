@@ -54,7 +54,7 @@ function hideAllPanels() {
 function getBtnByPanel(panel: HTMLElement | null): HTMLButtonElement | null {
   if (!panel) return null;
 
-  const panelId = panel?.id;
+  const panelId = panel.id;
 
   const targetBtnId = document.getElementById(`btn-${panelId}`);
 
