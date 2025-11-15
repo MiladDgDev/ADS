@@ -98,7 +98,6 @@ function showPanelInTabs(panel: HTMLElement | null) {
   } else {
     panel.classList.add("active-panel");
     panel.setAttribute("aria-hidden", "false");
-    deactivateButton(activeBtn);
     activateButton(targetBtn);
   }
 }
