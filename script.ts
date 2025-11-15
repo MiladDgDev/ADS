@@ -42,15 +42,17 @@ function hideAllPanels() {
   const panels = document.querySelectorAll(".panel");
   panels.forEach((el) => {
     el.classList.remove("active-panel");
+    el.setAttribute("aria-hidden", "true");
   });
   const buttons = document.querySelectorAll(".btn-panel");
   buttons.forEach((btn) => {
     btn.classList.remove("active-btn");
+    btn.setAttribute("aria-selected", "false");
   });
 }
 
-function getbtnByPanel(panel: HTMLElement | null): HTMLButtonElement | null {
-  if (panel === null) return null;
+function getBtnByPanel(panel: HTMLElement | null): HTMLButtonElement | null {
+  if (!panel) return null;
 
   const panelId = panel?.id;
 
@@ -64,7 +66,7 @@ function getbtnByPanel(panel: HTMLElement | null): HTMLButtonElement | null {
 }
 
 function getPanelByBtn(button: HTMLElement | null): HTMLElement | null {
-  if (button === null) return null;
+  if (!button) return null;
   const btnId = button?.id;
 
   const targetPanelId = document.getElementById(
@@ -75,24 +77,54 @@ function getPanelByBtn(button: HTMLElement | null): HTMLElement | null {
 }
 
 function showPanelInTabs(panel: HTMLElement | null) {
-  hideAllPanels();
-  panel?.classList.add("active-panel");
+  if (!panel) return;
+  const targetBtn = getBtnByPanel(panel);
+  if (!targetBtn) return;
+  const activePanel = document.querySelector(
+    ".panel.active-panel"
+  ) as HTMLElement | null;
+  const activeBtn = activePanel ? getBtnByPanel(activePanel) : null;
+
+  if (activePanel === panel) return;
+
+  if (activePanel) {
+    activePanel.classList.remove("active-panel");
+    activePanel.setAttribute("aria-hidden", "true");
+
+    panel.classList.add("active-panel");
+    panel.setAttribute("aria-hidden", "false");
+    deactivateButton(activeBtn);
+    activateButton(targetBtn);
+  } else {
+    panel.classList.add("active-panel");
+    panel.setAttribute("aria-hidden", "false");
+    deactivateButton(activeBtn);
+    activateButton(targetBtn);
+  }
 }
 
 function showPanelInAccordion(panel: HTMLElement | null) {
-  panel?.classList.add("active-panel");
+  if (!panel) return;
+  panel.classList.add("active-panel");
+  panel.setAttribute("aria-hidden", "false");
 }
 
 function activateButton(button: HTMLElement | null) {
-  button?.classList.add("active-btn");
+  if (!button) return;
+  button.classList.add("active-btn");
+  button.setAttribute("aria-selected", "true");
 }
 
 function deactivateButton(button: HTMLElement | null) {
-  button?.classList.remove("active-btn");
+  if (!button) return;
+  button.classList.remove("active-btn");
+  button.setAttribute("aria-selected", "false");
 }
 
 function deactivatePanel(panel: HTMLElement | null) {
-  panel?.classList.remove("active-panel");
+  if (!panel) return;
+  panel.classList.remove("active-panel");
+  panel.setAttribute("aria-hidden", "true");
 }
 
 function tabOrAccordionMode(): "tab" | "accordion" {
@@ -101,11 +133,11 @@ function tabOrAccordionMode(): "tab" | "accordion" {
 }
 
 function panelIsActive(panel: HTMLElement | null): boolean {
-  if (panel === null) return false;
+  if (!panel) return false;
   return panel.classList.contains("active-panel");
 }
 
 function buttonIsActive(button: HTMLElement | null): boolean {
-  if (button === null) return false;
+  if (!button) return false;
   return button.classList.contains("active-btn");
 }
