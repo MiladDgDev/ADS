@@ -8,6 +8,30 @@ html {
   box-sizing: border-box;
 }
 
+h1 {
+  font-size: 3.6rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: #f4f4f4;
@@ -19,11 +43,11 @@ body {
 .container {
   max-width: 1600px;
   margin: 0 auto;
-  /* display: grid;
+  display: grid;
   grid-template-columns:
     fit-content(100%) fit-content(100%) fit-content(100%) fit-content(100%)
     auto;
-  grid-template-rows: auto auto; */
+  grid-template-rows: auto auto;
 }
 .btn-panel {
   grid-row: 1;
@@ -35,35 +59,15 @@ body {
   cursor: pointer;
 }
 
-/* 
 .panel {
   grid-row: 2;
   grid-column: 1/-1;
   width: 100%;
-} */
-
-/* Artist Cards */
-/* 
-.artist-card {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 1rem;
-  margin: 1rem 0;
-  max-height: 10rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 50%;
-}
-.artist-image {
-  height: 100%;
-} */
-
-.panel {
   padding-top: 1rem;
+  display: grid;
 }
 
 #artists-panel {
-  display: grid;
   grid-template-columns: 1fr 1fr;
   list-style: none;
 }
@@ -89,11 +93,19 @@ body {
   justify-self: end;
 }
 
+.active-btn {
+  background-color: #222;
+  color: #fff;
+}
+
+.active-panel {
+  display: grid;
+}
+
 /* Concert Item */
 
 #concerts-panel {
   list-style: none;
-  display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
@@ -122,11 +134,7 @@ body {
 
 #repertoire-panel {
   list-style: none;
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .work {
@@ -137,4 +145,68 @@ body {
 
 .composition-title {
   font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+/* style for under 800px */
+
+@media (max-width: 800px) {
+  html {
+    font-size: 55%;
+  }
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .panel {
+    grid-row: auto;
+  }
+  .btn-panel {
+    grid-row: auto;
+    grid-column: auto;
+    width: 100%;
+  }
+
+  #artists-panel {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .artist-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+    justify-items: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .artist-image {
+    grid-row: 2;
+    grid-column: auto;
+    justify-self: center;
+  }
+
+  #concerts-panel {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .concert-item {
+    text-align: center;
+  }
+}
+
+/* style for under 400px */
+
+@media (max-width: 400px) {
+  html {
+    font-size: 50%;
+  }
+  #concerts-panel {
+    grid-template-columns: 1fr;
+  }
 }
