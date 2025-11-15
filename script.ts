@@ -1,8 +1,6 @@
 hideAllPanels();
 
 const buttons = document.querySelectorAll(".btn-panel");
-const panels = document.querySelectorAll(".panel");
-
 buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     e.preventDefault();
