@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Tabordion</title>
+  </head>
+  <body>
+    <div class="container" role="tablist" aria-label="Navigation tabs">
+      <button
+        id="btn-panel1"
+        class="btn-panel"
+        role="tab"
+        aria-selected="true"
+        aria-controls="panel1"
+        tabindex="0"
+      >
+        Artists
+      </button>
+      <button
+        id="btn-panel2"
+        class="btn-panel"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel2"
+        tabindex="0"
+      >
+        Concert List
+      </button>
+      <button
+        id="btn-panel3"
+        class="btn-panel"
+        role="tab"
+        aria-selected="false"
+        aria-controls="panel3"
+        tabindex="0"
+      >
+        Repertoire
+      </button>
+      <!-- Artists -->
+      <ul
+        id="artists-panel"
+        class="panel"
+        role="tabpanel"
+        aria-labelledby="btn-panel1"
+      >
+        <!-- Artist Card No. 1 -->
+        <li id="artist-card-1" class="artist-card">
+          <div class="artist-info">
+            <h3>Albus Guitaristus</h3>
+
+            <h3>Biography</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              quam impedit facere culpa nulla eligendi iure exercitationem vel
+              voluptatum vitae tenetur ullam cumque beatae, doloribus architecto
+              asperiores minima quidem quis?
+            </p>
+          </div>
+          <img
+            src="pics/albus-guitaristus.jpg"
+            alt="Guitarist Albus Guitaristus"
+            class="artist-image"
+          />
+        </li>
+        <!-- Artist Card No. 2 -->
+        <li id="artist-card-2" class="artist-card">
+          <div class="artist-info">
+            <h3>Violetta Violinista</h3>
+
+            <h3>Biography</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              quam impedit facere culpa nulla eligendi iure exercitationem vel
+              voluptatum vitae tenetur ullam cumque beatae, doloribus architecto
+              asperiores minima quidem quis?
+            </p>
+          </div>
+          <img
+            src="pics/violetta-violinista.jpg"
+            alt="Violinist Violetta Violinisa"
+            class="artist-image"
+          />
+        </li>
+        <!-- Artist Card No. 3 -->
+        <li id="artist-card-3" class="artist-card">
+          <div class="artist-info">
+            <h3>Supreme Sopranista</h3>
+
+            <h3>Biography</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam
+              quam impedit facere culpa nulla eligendi iure exercitationem vel
+              voluptatum vitae tenetur ullam cumque beatae, doloribus architecto
+              asperiores minima quidem quis?
+            </p>
+          </div>
+          <img
+            src="pics/supreme-sopranista.jpg"
+            alt="Soprano Supreme Sopranista"
+            class="artist-image"
+          />
+        </li>
+      </ul>
+      <!-- Concert List -->
+      <section
+        id="concerts-panel"
+        class="panel"
+        role="tabpanel"
+        aria-labelledby="btn-panel2"
+        aria-hidden="true"
+      >
+        <div class="concert-list"></div>
+      </section>
+      <!-- Repertoire -->
+      <section
+        id="panel3"
+        class="panel"
+        role="tabpanel"
+        aria-labelledby="btn-panel3"
+        aria-hidden="true"
+      >
+        the pieces
+      </section>
+    </div>
+  </body>
+</html>
