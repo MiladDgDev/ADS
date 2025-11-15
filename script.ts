@@ -67,7 +67,7 @@ function getBtnByPanel(panel: HTMLElement | null): HTMLButtonElement | null {
 
 function getPanelByBtn(button: HTMLElement | null): HTMLElement | null {
   if (!button) return null;
-  const btnId = button?.id;
+  const btnId = button.id;
 
   const targetPanelId = document.getElementById(
     btnId?.replace("btn-", "") || ""
