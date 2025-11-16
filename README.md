@@ -20,3 +20,7 @@ The project was developed using Visual Studio Code (VS Code), a powerful and ext
 - IntelliSense for TypeScript and JavaScript
 - Built-in terminal for running TypeScript compiler
 - Extensions for enhanced productivity (e.g., TypeScript support, live server for testing)
+
+## Answers to Questions
+
+The questions outlined in the provided Word document have been addressed and answered. The responses and relevant details can be found within this repository, including in the code comments, README content, and implementation notes.
