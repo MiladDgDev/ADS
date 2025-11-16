@@ -35,6 +35,24 @@ buttons.forEach(function (btn) {
         }
     });
 });
+window.addEventListener("resize", function (e) {
+    if (e.target instanceof Window) {
+        var mode = tabOrAccordionMode();
+        if (mode === "tab") {
+            var activePanels = document.querySelectorAll(".panel.active-panel");
+            if (activePanels.length > 1) {
+                // If multiple panels are active, keep only the first one active
+                activePanels.forEach(function (panel, index) {
+                    if (index === 0)
+                        return;
+                    deactivatePanel(panel);
+                    var btn = getBtnByPanel(panel);
+                    deactivateButton(btn);
+                });
+            }
+        }
+    }
+});
 function hideAllPanels() {
     var panels = document.querySelectorAll(".panel");
     panels.forEach(function (el) {
@@ -50,7 +68,7 @@ function hideAllPanels() {
 function getBtnByPanel(panel) {
     if (!panel)
         return null;
-    var panelId = panel === null || panel === void 0 ? void 0 : panel.id;
+    var panelId = panel.id;
     var targetBtnId = document.getElementById("btn-".concat(panelId));
     if (targetBtnId instanceof HTMLButtonElement) {
         return targetBtnId;
@@ -60,7 +78,7 @@ function getBtnByPanel(panel) {
 function getPanelByBtn(button) {
     if (!button)
         return null;
-    var btnId = button === null || button === void 0 ? void 0 : button.id;
+    var btnId = button.id;
     var targetPanelId = document.getElementById((btnId === null || btnId === void 0 ? void 0 : btnId.replace("btn-", "")) || "");
     return targetPanelId;
 }
@@ -85,7 +103,6 @@ function showPanelInTabs(panel) {
     else {
         panel.classList.add("active-panel");
         panel.setAttribute("aria-hidden", "false");
-        deactivateButton(activeBtn);
         activateButton(targetBtn);
     }
 }
